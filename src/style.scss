@@ -169,34 +169,40 @@
           }
         }
       }
-
-      .userChat {
+      .chats{
+        background-color: #3e3c61;
+        // background-color: #ddddf7;
         padding: 10px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        color: white;
-        cursor: pointer;
+        height: calc(100% - 140px);
+        overflow-y: scroll;
+        .userChat {
+          padding: 10px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          color: white;
+          cursor: pointer;
 
-        &:hover {
-          background-color: #2f2d52;
-        }
-
-        img {
-          width: 50px;
-          height: 50px;
-          border-radius: 50%;
-          object-fit: cover;
-        }
-
-        .userChatInfo {
-          span {
-            font-size: 18px;
-            font-weight: 500;
+          &:hover {
+            background-color: #2f2d52;
           }
-          p {
-            font-size: 14px;
-            color: lightgray;
+
+          img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          .userChatInfo {
+            span {
+              font-size: 18px;
+              font-weight: 500;
+            }
+            p {
+              font-size: 14px;
+              color: lightgray;
+            }
           }
         }
       }
@@ -228,7 +234,7 @@
         background-color: #ddddf7;
         padding: 10px;
         height: calc(100% - 160px);
-        overflow: scroll;
+        overflow-y: scroll;
 
         .message {
           display: flex;
@@ -246,6 +252,20 @@
               height: 40px;
               border-radius: 50%;
               object-fit: cover;
+              margin-bottom: 5px;
+            }
+            .timestamp {
+              width: 80%;
+              height: 40px;
+              background-color: #ddddf7;
+              color: whitesmoke;
+              padding: 10px; // Add padding
+              border-radius: 10px; // Round the corners
+              font-weight: bold;
+              // display: flex; // Use flexbox to center the text
+              justify-content: center; // Center the text horizontally
+              align-items: center; // Center the text vertically
+              box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); // Add a subtle shadow
             }
           }
           .messageContent {

@@ -19,14 +19,15 @@ const Register = () => {
     const password = e.target[2].value;
     const file = e.target[3].files[0];
 
+
+
     try {
       //Create user
       const res = await createUserWithEmailAndPassword(auth, email, password);
-
       //Create a unique image name
       const date = new Date().getTime();
       const storageRef = ref(storage, `${displayName + date}`);
-
+      console.log(1);
       await uploadBytesResumable(storageRef, file).then(() => {
         getDownloadURL(storageRef).then(async (downloadURL) => {
           try {
@@ -62,7 +63,7 @@ const Register = () => {
   return (
     <div className="formContainer">
       <div className="formWrapper">
-        <span className="logo">Lama Chat</span>
+        <span className="logo">Real-Time Chat</span>
         <span className="title">Register</span>
         <form onSubmit={handleSubmit}>
           <input required type="text" placeholder="display name" />
@@ -78,7 +79,7 @@ const Register = () => {
           {err && <span>Something went wrong</span>}
         </form>
         <p>
-          You do have an account? <Link to="/register">Login</Link>
+          You do have an account? <Link to="/Login">Login</Link>
         </p>
       </div>
     </div>
